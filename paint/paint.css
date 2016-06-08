@@ -1,0 +1,32 @@
+/*CSS FOR PAINT.HTML*/
+
+* {
+	font-family: 'Arial', 'Helvetica', 'TimesNewRoman', 'serif';
+}	
+
+.nav {
+	position: fixed;
+	background-color: #59ADBB;
+	padding-left: 10px;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	font-family: 'Arial', 'Helvetica', 'TimesNewRoman', 'serif';
+	z-index: 10;
+	color: #eeeeee;
+}
+
+.container {
+	background-color: #eeeeee;
+	position: relative;
+	left:0px;
+	top: auto;
+	width: 100%;
+	height: 100%;
+}
+
+canvas {
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+}

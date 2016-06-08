@@ -1,0 +1,158 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+  <!-- uncomment lines below to include extra p5 libraries -->
+  <script language="javascript" src="libraries/p5.dom.js"></script>
+  <!--<script language="javascript" src="libraries/p5.sound.js"></script>-->
+  <script language="javascript" type="text/javascript" src="libraries/sketch.js"></script>
+  <!-- this line removes any default padding and style. you might only need one of these values set. -->
+  <style> body {padding: 0; margin: 0;} </style>
+  <link rel = 'stylesheet' type = 'text/css' href = 'paint.css'/>
+  <link rel = 'shortcut icon' type = 'image/ico' href = 'favicon.ico'/>
+  <title>Paint Zone!</title>
+</head>
+
+<body>
+	<div class = 'nav'>
+		<h2>Paint Zone</h2>
+	</div>
+	<div class = 'container'>
+	<script>
+		var rSlider, gSlider, bSlider, sizeSlider;
+		var shape, clear, multi, toDraw;
+		var drawShape = 'ellipse';
+		var value = 0;
+		function setup() {
+			var sx = 150;
+			var shx = 310;
+			var cnv = createCanvas(windowWidth - 12, 600);
+			cnv.position(3, 70);
+			//sliders
+			sizeSlider = createSlider(10, 250, 0);
+			fill(255, 0, 0);
+			rSlider = createSlider(0, 255, 0);
+			fill(0, 255, 0);
+			gSlider = createSlider(0, 255, 0);
+			fill(0, 0, 255);
+			bSlider = createSlider(0, 255, 0);
+			//slider positions
+			sizeSlider.position(150, height - 80)
+			rSlider.position(150, height - 40);
+			gSlider.position(150, height);
+			bSlider.position(150, height + 40);
+			//buttons
+			shape = createButton('Change Shape (s)');
+			shape.position(shx, height - 80);
+			shape.mousePressed(change)
+			clear = createButton('Clear canvas (c)');
+			clear.position(shx, height);
+			clear.mousePressed(clearScreen);
+			multi = createButton('Multi-colors (m)');
+			multi.position(shx, height - 40);
+			multi.mousePressed(changeColors);
+			toDraw = createButton('Toggle draw (t)');
+			toDraw.position(shx, height + 40);			
+			toDraw.mousePressed(drawOrNot);
+		}
+		var checkMulti = 0;
+		var checkDraw = 1;
+		function changeColors() {
+			if (checkMulti == 0) {
+				checkMulti = 1;
+			}
+			else {
+				checkMulti = 0;
+			}
+		}
+
+		function keyTyped() {
+			if (key === 'm') {
+				checkMulti = abs(checkMulti - 1);
+			}
+			if (key === 's' & drawShape == 'rect') {
+				drawShape = 'ellipse';
+			}
+			else if (key === 's' & drawShape == 'ellipse') {
+				drawShape = 'rect';
+			}
+			if (key === 'c') {
+				location.reload();
+			}
+			if (key === 't') {
+				drawOrNot();
+			}
+		}
+
+		function windowResized() {
+			resizeCanvas(windowWidth - 12, 600);
+		}
+
+		function clearScreen() {
+			location.reload();
+		}
+
+		function change() {
+			if (drawShape == 'ellipse') {
+				drawShape = 'rect';
+			}
+			else {
+				drawShape = 'ellipse';
+			}
+		}			
+
+		function check(pos = 400) {
+			if (drawShape == 'ellipse') {
+				return ellipse(mouseX, pos - sizeSlider.value()/2, sizeSlider.value(), sizeSlider.value());
+			}
+			else {
+				return rect(mouseX, pos - sizeSlider.value(), sizeSlider.value(), sizeSlider.value());
+			}
+		}
+
+		function drawOrNot() {
+			if (checkDraw) {
+				noLoop();
+				checkDraw = 0;
+			}
+			else {
+				loop();
+				checkDraw = 1;
+			} 
+		}
+
+		function draw() {
+			line(0, height - 200, width, height - 200);
+			var x = 70;
+			var r = rSlider.value();
+			var g = gSlider.value();
+			var b = bSlider.value();
+			noStroke();
+			if (checkMulti == 1) {
+				r = random(255);
+				g =  random(255);
+				b = random(255);
+			}
+			if(mouseY <= height - 200) {
+				fill(r, g, b);
+				check(mouseY);
+			}
+			else {
+				fill(r, g, b);
+				check();
+			}
+			fill(0);
+			textSize(20)
+			textFont('Helvetica');
+			text('Size', x, height - 130);
+			fill(255, 0, 0);
+			text('Red', x, height - 90);
+			fill(0, 255, 0);
+			text('Green', x, height - 50);
+			fill(0, 0, 255);
+			text('Blue', x, height - 10);
+		}
+	</script>
+	</div>
+</body>
+</html>
