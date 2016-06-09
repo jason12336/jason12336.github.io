@@ -3,7 +3,7 @@ var obArray = [];
 var x = 0;
 var rate;
 function setup() {
-	var cvs = createCanvas(600, 400);
+	var cvs = createCanvas(windowWidth * 0.6, windowHeight * 0.4);
 	cvs.position((windowWidth / 2) - width / 2, 65);
 	rate = createSlider(1, 20, 1);
 	rate.position((windowWidth / 2) - width / 2, height + 85);
@@ -27,6 +27,11 @@ function mousePressed() {
 		var c = new Circle;
 		obArray.push(c);
 	}
+}
+
+function windowResize() {
+	resizeCanvas(windowWidth * 0.6, windowHeight * 0.4);
+	rate.position((windowWidth / 2) - width / 2, height + 85)
 }
 
 function draw() {
