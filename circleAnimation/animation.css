@@ -15,6 +15,6 @@
 }
 
 canvas {
-  position: relative;
-  left: 45%;  
+  position: absolute;
+  left: 40%;  
 }
