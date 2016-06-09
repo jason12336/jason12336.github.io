@@ -30,6 +30,7 @@ canvas {
 	border-style: solid;
 	border-color: black;
 	border-width: 2px;
+	top: 70px;
 	width: 95%;
 	height: 600px;
 }
