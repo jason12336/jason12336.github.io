@@ -35,6 +35,7 @@ function draw() {
 		obArray[i].display();
 		obArray[i].move();		
 	}
+	fill(0);
 	textFont('Arial');
 	text('Speed', width / 2, height + 25);
 }
