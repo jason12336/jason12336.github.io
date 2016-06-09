@@ -9,7 +9,7 @@ function setup() {
 	rate.position((windowWidth / 2) - width / 2, height + 85);
 	fill(0);
 	textFont('Arial');
-	text('Speed', width / 2, height + 25);
+	text('Speed', width / 2, height - 25);
 }
 function Circle() {
 	this.x = mouseX;
