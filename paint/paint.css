@@ -29,4 +29,7 @@ canvas {
 	border-style: solid;
 	border-color: black;
 	border-width: 2px;
+	width: 98%;
+	height: 600px;
+	left: 1%;
 }
