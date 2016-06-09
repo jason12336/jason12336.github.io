@@ -7,6 +7,9 @@ function setup() {
 	cvs.position((windowWidth / 2) - width / 2, 65);
 	rate = createSlider(1, 20, 1);
 	rate.position((windowWidth / 2) - width / 2, height + 85);
+	fill(0);
+	textFont('Arial');
+	text('Speed', width / 2, height + 25);
 }
 function Circle() {
 	this.x = mouseX;
@@ -35,7 +38,4 @@ function draw() {
 		obArray[i].display();
 		obArray[i].move();		
 	}
-	fill(0);
-	textFont('Arial');
-	text('Speed', width / 2, height + 25);
 }
