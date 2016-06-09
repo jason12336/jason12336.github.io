@@ -3,10 +3,10 @@ var obArray = [];
 var x = 0;
 var rate;
 function setup() {
-	var cvs = createCanvas(windowWidth * 0.6, windowHeight * 0.6);
-	cvs.position(0, 65);
+	var cvs = createCanvas(windowWidth * 0.6, windowHeight * 0.8);
+	cvs.position(5, 65);
 	rate = createSlider(1, 20, 1);
-	rate.position(0, height + 85);
+	rate.position(5, height + 85);
 }
 function Circle() {
 	this.x = mouseX;
