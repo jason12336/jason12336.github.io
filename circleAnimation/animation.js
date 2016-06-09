@@ -30,7 +30,7 @@ function mousePressed() {
 }
 
 function draw() {
-	background(0);	
+	background(217, 224, 221);	
 	for(var i = 0; i < obArray.length; i++) {
 		obArray[i].display();
 		obArray[i].move();		
