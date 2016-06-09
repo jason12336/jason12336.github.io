@@ -30,7 +30,8 @@ canvas {
 	border-style: solid;
 	border-color: black;
 	border-width: 2px;
-	width: 98%;
+	left: 0.5%;
+	width: 97.5%;
 	height: 600px;
 	top: 70px;
 }
