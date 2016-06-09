@@ -4,7 +4,7 @@ var x = 0;
 var rate;
 function setup() {
 	var cvs = createCanvas(600, 400);
-	cvs.position(windowWidth - width / 2, 65);
+	cvs.position((windowWidth / 2) - width / 2, 65);
 	rate = createSlider(1, 20, 1);
 	rate.position(0, height + 20);
 }
