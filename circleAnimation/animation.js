@@ -3,7 +3,7 @@ var obArray = [];
 var x = 0;
 var rate;
 function setup() {
-	var cvs = createCanvas(windowWidth * 0.6, windowHeight * 0.4);
+	var cvs = createCanvas(windowWidth * 0.6, windowHeight * 0.55);
 	cvs.position((windowWidth / 2) - width / 2, 65);
 	rate = createSlider(1, 20, 1);
 	rate.position((windowWidth / 2) - width / 2, height + 85);
@@ -30,7 +30,7 @@ function mousePressed() {
 }
 
 function windowResize() {
-	resizeCanvas(windowWidth * 0.6, windowHeight * 0.4);
+	resizeCanvas(windowWidth * 0.6, windowHeight * 0.55);
 	rate.position((windowWidth / 2) - width / 2, height + 85)
 }
 
