@@ -3,7 +3,8 @@ var obArray = [];
 var x = 0;
 var rate;
 function setup() {
-	createCanvas(600, 400);
+	var cvs = createCanvas(600, 400);
+	cvs.position(65, windowWidth - width / 2);
 	rate = createSlider(1, 20, 1);
 	rate.position(0, height + 20);
 }
