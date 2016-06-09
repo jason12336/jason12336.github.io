@@ -1,0 +1,20 @@
+/*stylesheet for circleAnimation.html*/
+
+* {
+  font-family: 'Arial', 'Times New Roman', 'Helvetica';
+}
+.nav {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  background-color: #10E550;
+  color: black;
+  top: 0px;
+  left: 0px;
+}
+
+.canvas {
+  position: relative;
+  left: 45%;
+  top: 65px;
+}
