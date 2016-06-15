@@ -10,7 +10,13 @@ function setup() {
 	obArray.push(b);
 	var c = new Computer;
 	obArray.push(c);
+	var s = createButton('Start');
+	s.position(windowWidth / 2 - 330, 300);
+	s.mousePressed(buttonStart);
+}
 
+function buttonStart() {
+		start = 1;
 }
 
 function Ball() {
@@ -89,8 +95,11 @@ function mousePressed() {
 }
 
 function keyTyped() {
-	if (key === 's') {
+	if (key === 's' && start == 0) {
 		start = 1;
+	}
+	else if (key === 's' && start == 1){
+		start = 0;
 	}
 }
 
